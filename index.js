@@ -13,7 +13,7 @@ module.exports = {
 
     var summernotePath   = path.join(app.bowerDirectory,'/summernote/dist/');
     var bootstrapPath   = path.join(app.bowerDirectory,'/bootstrap/dist/');
-    var fontawesomePath   = path.join(app.bowerDirectory,'/fontawesome/');
+    var fontawesomePath   = path.join(app.bowerDirectory,'/font-awesome/');
     var options         = app.options['ember-cli-summernote'] || {};
 
 
