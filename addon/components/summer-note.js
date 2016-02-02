@@ -9,13 +9,14 @@ var SummerNoteComponent = Ember.Component.extend({
   height: 120,
   focus: false,
   airMode: false,
+  callbacks: false,
   disabled: false,
   dialogsInBody: false,
   disabledOptions: {},
 
   willDestroyElement: function() {
     this.$('#summernote').summernote('destroy');
-    console.log('summernote("destroy")');
+    //console.log('summernote("destroy")');
   },
 
   didInsertElement: function() {
@@ -23,6 +24,7 @@ var SummerNoteComponent = Ember.Component.extend({
     var _height = this.get('height');
     var _focus = this.get('focus');
     var _airMode = this.get('airMode');
+    var _callbacks = this.get('callbacks');
     var _dialogsInBody = this.get('dialogsInBody');
     var _toolbar = this.getToolbarOptions(this.get('disabledOptions'));
 
@@ -39,6 +41,7 @@ var SummerNoteComponent = Ember.Component.extend({
       toolbar: _toolbar,
       airMode: _airMode,
       dialogsInBody: _dialogsInBody,
+      callbacks: _callbacks
       // airPopover: [
       //   ['color', ['color']],
       //   ['font', ['bold', 'underline', 'clear']],
@@ -65,7 +68,7 @@ var SummerNoteComponent = Ember.Component.extend({
 
   doUpdate: function() {
     var content = this.$('#summernote').summernote('code');
-    console.log('content' + JSON.stringify(content));
+    //console.log('content' + JSON.stringify(content));
     this.set('content', content);
   },
 
